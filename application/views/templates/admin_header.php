@@ -57,7 +57,20 @@
 
 	<!-- The fav icon -->
 	<link rel="shortcut icon" href="<?= $base_url ?>img/favicon.ico">
+	<style type="text/css">
+		th{
+			text-align: center !important;
+			vertical-align: middle !important;
+		}
 		
+		td{
+			vertical-align: middle !important;
+		}
+		
+		.center{
+			text-align: center !important;
+		}
+	</style>
 </head>
 
 <body>
@@ -109,7 +122,7 @@
 				<div class="well nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li class="nav-header hidden-tablet"></li>
-						<li><a class="ajax-link" href="<?= $base_url ?>back/index"><i class="icon-home"></i><span class="hidden-tablet"> Back Home</span></a></li>
+						<li><a class="ajax-link" href="<?= $base_url ?>admin/index"><i class="icon-home"></i><span class="hidden-tablet"> Back Home</span></a></li>
 						<li><a class="ajax-link" href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet"> UI Features</span></a></li>
 						<li><a class="ajax-link" href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Forms</span></a></li>
 						<li><a class="ajax-link" href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Charts</span></a></li>

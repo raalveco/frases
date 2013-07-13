@@ -1,22 +1,24 @@
 <div class="row-fluid sortable">	
 	<div class="box span12">
 		<div class="box-header well" data-original-title>
-			<h2><i class="icon-user"></i> Categories</h2>
+			<h2><i class="icon-user"></i> Tipografías</h2>
 		</div>
 		<div class="box-content">
 			<table class="table table-striped table-bordered bootstrap-datatable datatable">
 			  <thead>
 				  <tr>
 					  <th style="width: 50px;">Id</th>
-					  <th>Name</th>
-					  <th style="width: 250px;">Actions</th>
+					  <th>Código</th>
+					  <th>Nombre</th>
+					  <th style="width: 250px;">Acciones</th>
 				  </tr>
 			  </thead>   
 			  <tbody>
-			  	<?php if($categories) foreach($categories as $category){ ?>
+			  	<?php if($fonts) foreach($fonts as $font){ ?>
 			  	<tr>
-			  		<td class="center"><?= $category->id ?></td>
-			  		<td><?= $category->name ?></td>
+			  		<td class="center"><?= $font->id ?></td>
+			  		<td><?= $font->code ?></td>
+			  		<td><?= $font->name ?></td>
 			  		<td style="text-align: center;">
 			  			<a class="btn btn-success" href="#">
 							<i class="icon-zoom-in icon-white"></i>  
