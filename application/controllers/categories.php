@@ -10,7 +10,7 @@ class Categories extends CI_Controller {
 		$data["categories"] = $this->Category->report("id > 0","name ASC");
 
 		$this->load->view('templates/admin_header');
-		$this->load->view('admin/categories',$data);
+		$this->load->view('admin/categories/report',$data);
 		$this->load->view('templates/admin_footer');
 	}
 }
