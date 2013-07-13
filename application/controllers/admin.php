@@ -14,7 +14,7 @@ class Admin extends CI_Controller {
 	{
 		$this->load->model('Category');
 		
-		$data["categories"] = $this->Category->last_entries(30);
+		$data["categories"] = $this->Category->report("id > 0","name ASC");
 
 		$this->load->view('templates/admin_header');
 		$this->load->view('admin/categories',$data);
@@ -25,7 +25,7 @@ class Admin extends CI_Controller {
 	{
 		$this->load->model('Font');
 		
-		$data["fonts"] = $this->Font->last_entries(30);
+		$data["fonts"] = $this->Font->report("id > 0","name ASC");
 
 		$this->load->view('templates/admin_header');
 		$this->load->view('admin/fonts',$data);
