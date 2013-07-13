@@ -99,5 +99,7 @@
 	<script src="<?= $base_url ?>js/jquery.uploadify-3.1.min.js"></script>
 	<!-- history.js for cross-browser state change on ajax -->
 	<script src="<?= $base_url ?>js/jquery.history.js"></script>
+	
+	<script src="<?= $base_url ?>js/charisma.js"></script>
 </body>
 </html>
