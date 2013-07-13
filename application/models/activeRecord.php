@@ -60,7 +60,8 @@
 			$table = get_called_class();
 			$table = strtolower($table);
 			
-			$this->db->insert($table, $fields); 
+			$this->db->insert($table, $fields);
+			return $this->db->insert_id();
 		}
 		
 		function update($object){
