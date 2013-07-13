@@ -3,7 +3,7 @@
 		function report($where = "id > 0", $order = "id ASC", $limit = 30, $offset = 0)
 	    {
 	    	$table = get_called_class();
-			$table = Format::uncamelize($table);
+			$table = strtolower($table);
 			
 			$this->db->select('*');
 			$this->db->from($table);
@@ -18,7 +18,7 @@
 		function find($where = "id > 0", $order = "id ASC", $limit = 30, $offset = 0)
 	    {
 	    	$table = get_called_class();
-			$table = Format::uncamelize($table);
+			$table = strtolower($table);
 			
 			$this->db->select('*');
 			$this->db->from($table);
@@ -32,7 +32,7 @@
 		
 		function fetch($id){
 			$table = get_called_class();
-			$table = Format::uncamelize($table);
+			$table = strtolower($table);
 			
 			$this->db->select('*');
 			$this->db->from($table);
@@ -44,7 +44,7 @@
 		
 		function find_first($where = "id > 0", $order = "id ASC", $offset = 0){
 			$table = get_called_class();
-			$table = Format::uncamelize($table);
+			$table = strtolower($table);
 			
 			$this->db->select('*');
 			$this->db->from($table);
@@ -58,14 +58,14 @@
 		
 		function insert($fields){
 			$table = get_called_class();
-			$table = Format::uncamelize($table);
+			$table = strtolower($table);
 			
 			$this->db->insert($table, $fields); 
 		}
 		
 		function update($object){
 			$table = get_called_class();
-			$table = Format::uncamelize($table);
+			$table = strtolower($table);
 			
 			$this->db->where("id = ".$object -> id);
 			$this->db->update($table, $object); 
@@ -73,7 +73,7 @@
 		
 		function delete($object){
 			$table = get_called_class();
-			$table = Format::uncamelize($table);
+			$table = strtolower($table);
 			
 			if(!is_numeric($object)){
 				$this->db->where('id = '.$object->id);
@@ -87,7 +87,7 @@
 		
 		function count($where = "id > 0"){
 			$table = get_called_class();
-			$table = Format::uncamelize($table);
+			$table = strtolower($table);
 			
 			$this->db->where($where);
 			$this->db->from($table);
@@ -96,7 +96,7 @@
 		
 		function exists($where = "id > 0"){
 			$table = get_called_class();
-			$table = Format::uncamelize($table);
+			$table = strtolower($table);
 			
 			$this->db->where($where);
 			$this->db->from($table);
