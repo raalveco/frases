@@ -8,8 +8,8 @@
 			  <thead>
 				  <tr>
 					  <th style="width: 50px;">Id</th>
-					  <th>Name</th>
-					  <th style="width: 250px;">Actions</th>
+					  <th>Nombre</th>
+					  <th style="width: 250px;">Acciones</th>
 				  </tr>
 			  </thead>   
 			  <tbody>

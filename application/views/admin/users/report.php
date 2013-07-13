@@ -8,7 +8,7 @@
 			  <thead>
 				  <tr>
 					  <th style="width: 50px;">Id</th>
-					  <th>Facebook ID</th>
+					  <th>Facebook</th>
 					  <th>Nombre</th>
 					  <th>Apellido</th>
 					  <th>Correo Electrónico</th>

@@ -8,8 +8,8 @@
 			  <thead>
 				  <tr>
 					  <th style="width: 50px;">Id</th>
-					  <th>Frase ID</th>
-					  <th>Etiqueta ID</th>
+					  <th>Frase</th>
+					  <th>Etiqueta</th>
 					  <th style="width: 250px;">Acciones</th>
 				  </tr>
 			  </thead>   
@@ -17,8 +17,8 @@
 			  	<?php if($tags) foreach($tags as $tag){ ?>
 			  	<tr>
 			  		<td class="center"><?= $tag->id ?></td>
-			  		<td><?= $tag->phrase_id ?></td>
-			  		<td><?= $tag->tag_id ?></td>
+			  		<td><?= $tag->phrase_id->phrase?></td>
+			  		<td><?= $tag->tag_id->keyword ?></td>
 			  		<td style="text-align: center;">
 			  			<a class="btn btn-success" href="#">
 							<i class="icon-zoom-in icon-white"></i>  

@@ -8,7 +8,7 @@
 			  <thead>
 				  <tr>
 					  <th style="width: 50px;">Id</th>
-					  <th>Frase ID</th>
+					  <th>Frase</th>
 					  <th>Fecha de Visita</th>
 					  <th style="width: 250px;">Acciones</th>
 				  </tr>
@@ -17,7 +17,7 @@
 			  	<?php if($visits) foreach($visits as $visit){ ?>
 			  	<tr>
 			  		<td class="center"><?= $visit->id ?></td>
-			  		<td><?= $visit->phrase_id ?></td>
+			  		<td><?= $visit->phrase_id->phrase ?></td>
 			  		<td><?= $visit->visit_date ?></td>
 			  		<td style="text-align: center;">
 			  			<a class="btn btn-success" href="#">

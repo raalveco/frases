@@ -8,8 +8,8 @@
 			  <thead>
 				  <tr>
 					  <th style="width: 50px;">Id</th>
-					  <th>Frase ID</th>
-					  <th>Categoria ID</th>
+					  <th>Frase</th>
+					  <th>Categoria</th>
 					  <th style="width: 250px;">Acciones</th>
 				  </tr>
 			  </thead>   
@@ -17,8 +17,8 @@
 			  	<?php if($categories) foreach($categories as $category){ ?>
 			  	<tr>
 			  		<td class="center"><?= $category->id ?></td>
-			  		<td><?= $category->phrase_id ?></td>
-			  		<td><?= $category->category_id ?></td>
+			  		<td><?= $category->phrase_id->phrase ?></td>
+			  		<td><?= $category->category_id->name ?></td>
 			  		<td style="text-align: center;">
 			  			<a class="btn btn-success" href="#">
 							<i class="icon-zoom-in icon-white"></i>  

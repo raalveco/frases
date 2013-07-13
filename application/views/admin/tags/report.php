@@ -9,7 +9,7 @@
 				  <tr>
 					  <th style="width: 50px;">Id</th>
 					  <th>Palabra Clave</th>
-					  <th style="width: 250px;">Actiones</th>
+					  <th style="width: 250px;">Acciones</th>
 				  </tr>
 			  </thead>   
 			  <tbody>

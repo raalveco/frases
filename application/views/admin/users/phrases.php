@@ -8,8 +8,8 @@
 			  <thead>
 				  <tr>
 					  <th style="width: 50px;">Id</th>
-					  <th>Usuario ID</th>
-					  <th>Frase ID</th>
+					  <th>Usuario</th>
+					  <th>Frase</th>
 					  <th style="width: 250px;">Acciones</th>
 				  </tr>
 			  </thead>   
@@ -17,8 +17,8 @@
 			  	<?php if($phrases) foreach($phrases as $phrase){ ?>
 			  	<tr>
 			  		<td class="center"><?= $phrase->id ?></td>
-			  		<td><?= $phrase->user_id ?></td>
-			  		<td><?= $phrase->phrase_id ?></td>
+			  		<td><?= $phrase->user_id->facebook_id ?></td>
+			  		<td><?= $phrase->phrase_id->phrase ?></td>
 			  		<td style="text-align: center;">
 			  			<a class="btn btn-success" href="#">
 							<i class="icon-zoom-in icon-white"></i>  
