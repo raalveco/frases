@@ -14,5 +14,17 @@
 	    	$query = $this->db->get();
 	        return $query->result();
 	    }
+		
+		function fetch($id){
+			$class = get_called_class();
+			$class = strtolower($class);
+			
+			$this->db->select('*');
+			$this->db->from($class);
+	    	$this->db->where("id = $id");
+			
+	    	$query = $this->db->get();
+	        return $query->row();
+		}
 	}
 ?>
