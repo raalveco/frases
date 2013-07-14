@@ -8,8 +8,8 @@
 			  <thead>
 				  <tr>
 					  <th style="width: 50px;">Id</th>
-					  <th>Usuario ID</th>
-					  <th>Frase ID</th>
+					  <th>Usuario</th>
+					  <th>Frase</th>
 					  <th>Fecha de Publicación</th>
 					  <th style="width: 250px;">Acciones</th>
 				  </tr>
@@ -18,8 +18,8 @@
 			  	<?php if($posts) foreach($posts as $post){ ?>
 			  	<tr>
 			  		<td class="center"><?= $post->id ?></td>
-			  		<td><?= $post->user_id ?></td>
-			  		<td><?= $post->phrase_id ?></td>
+			  		<td><?= $post->user_id->facebook_id ?></td>
+			  		<td><?= $post->phrase_id->phrase ?></td>
 			  		<td><?= $post->post_date ?></td>
 			  		<td style="text-align: center;">
 			  			<a class="btn btn-success" href="#">

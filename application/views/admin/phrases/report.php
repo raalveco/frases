@@ -8,20 +8,20 @@
 			  <thead>
 				  <tr>
 					  <th style="width: 50px;">Id</th>
-					  <th>Fondo ID</th>
-					  <th>Fuente ID</th>
+					  <th>Fondo</th>
+					  <th>Fuente</th>
 					  <th>Frase</th>
 					  <th>De</th>
 					  <th>Para</th>
-					  <th style="width: 250px;">Actiones</th>
+					  <th style="width: 250px;">Acciones</th>
 				  </tr>
 			  </thead>   
 			  <tbody>
 			  	<?php if($phrases) foreach($phrases as $phrase){ ?>
 			  	<tr>
 			  		<td class="center"><?= $phrase->id ?></td>
-			  		<td><?= $phrase->background_id ?></td>
-			  		<td><?= $phrase->font_id ?></td>
+			  		<td><?= $phrase->background_id->image ?></td>
+			  		<td><?= $phrase->font_id->name ?></td>
 			  		<td><?= $phrase->phrase ?></td>
 			  		<td><?= $phrase->from ?></td>
 			  		<td><?= $phrase->to ?></td>
