@@ -1,3 +1,7 @@
+<?php
+	$this->config->load('config'); 
+	$base_url = $this->config->item('base_url');
+?>
 <div class="row-fluid sortable">	
 	<div class="box span12">
 		<div class="box-header well" data-original-title>
@@ -10,7 +14,12 @@
 					  <th style="width: 50px;">Id</th>
 					  <th>Código</th>
 					  <th>Nombre</th>
-					  <th style="width: 250px;">Acciones</th>
+					  <th style="width: 250px;">
+					  	<a class="btn btn-info" href="<?= $base_url ?>index.php/configurations/add">
+							<i class="icon-edit icon-white"></i>  
+							Nuevo 
+						</a>
+					  </th>
 				  </tr>
 			  </thead>   
 			  <tbody>

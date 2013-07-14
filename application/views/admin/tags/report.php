@@ -1,3 +1,7 @@
+<?php
+	$this->config->load('config'); 
+	$base_url = $this->config->item('base_url');
+?>
 <div class="row-fluid sortable">	
 	<div class="box span12">
 		<div class="box-header well" data-original-title>
