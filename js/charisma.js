@@ -1,4 +1,15 @@
 $(document).ready(function(){
+	
+	$('.fondos').click(function(e){
+		e.preventDefault();
+		
+		alert($(this).attr("href"));
+		
+		$('#fondosModal .modal-body').load($(this).attr("href"));
+		
+		$('#fondosModal').modal('show');
+	});
+	
 	//themes, change CSS with JS
 	//ajax menu checkbox
 	$('#is-ajax').click(function(e){

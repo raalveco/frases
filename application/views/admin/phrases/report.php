@@ -12,12 +12,10 @@
 			  <thead>
 				  <tr>
 					  <th style="width: 50px;">Id</th>
-					  <th>Fondo</th>
-					  <th>Fuente</th>
+					  <th style="width: 75px;">Fondo</th>
+					  <th style="width: 150px;">Fuente</th>
 					  <th>Frase</th>
-					  <th>De</th>
-					  <th>Para</th>
-					  <th style="width: 250px;">
+					  <th style="width: 280px;">
 					  	<a class="btn btn-info" href="<?= $base_url ?>index.php/phrases/add">
 							<i class="icon-edit icon-white"></i>  
 							Nuevo 
@@ -32,10 +30,12 @@
 			  		<td><?= $phrase->background_id->image ?></td>
 			  		<td><?= $phrase->font_id->name ?></td>
 			  		<td><?= $phrase->phrase ?></td>
-			  		<td><?= $phrase->from ?></td>
-			  		<td><?= $phrase->to ?></td>
 			  		<td style="text-align: center;">
-			  			<a class="btn btn-success" href="<?= $base_url ?>index.php/phrases/edit/<?= $phrase->id ?>">
+			  			<a class="btn btn-info fondos" href="<?= $base_url ?>index.php/phrases/backgrounds/<?= $phrase->id ?>">
+							<i class="icon-picture icon-white"></i>  
+							Fondo                                            
+						</a>
+						<a class="btn btn-success" href="<?= $base_url ?>index.php/phrases/edit/<?= $phrase->id ?>">
 							<i class="icon-edit icon-white"></i>  
 							Editar                                            
 						</a>

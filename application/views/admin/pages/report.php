@@ -14,8 +14,12 @@
 					  <th style="width: 50px;">Id</th>
 					  <th>Código</th>
 					  <th>Titulo</th>
-					  <th>Contenido</th>
-					  <th style="width: 250px;">Actiones</th>
+					  <th style="width: 200px;">
+						<a class="btn btn-info" href="<?= $base_url ?>index.php/pages/add">
+							<i class="icon-edit icon-white"></i>  
+							Nuevo 
+						</a>
+					  </th>
 				  </tr>
 			  </thead>   
 			  <tbody>
@@ -24,17 +28,12 @@
 			  		<td class="center"><?= $page->id ?></td>
 			  		<td><?= $page->code ?></td>
 			  		<td><?= $page->title ?></td>
-			  		<td><?= $page->content ?></td>
 			  		<td style="text-align: center;">
-			  			<a class="btn btn-success" href="#">
-							<i class="icon-zoom-in icon-white"></i>  
-							Ver                                            
-						</a>
-						<a class="btn btn-info" href="#">
+			  			<a class="btn btn-success" href="<?= $base_url ?>index.php/pages/edit/<?= $page->id ?>">
 							<i class="icon-edit icon-white"></i>  
 							Editar                                            
 						</a>
-						<a class="btn btn-danger" href="#">
+						<a class="btn btn-danger" href="<?= $base_url ?>index.php/pages/delete/<?= $page->id ?>">
 							<i class="icon-trash icon-white"></i> 
 							Eliminar
 						</a>

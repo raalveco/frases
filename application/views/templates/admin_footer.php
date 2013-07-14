@@ -2,6 +2,10 @@
 			</div><!--/#content.span10-->
 				</div><!--/fluid-row-->
 				
+		<?php
+			$this->config->load('config'); 
+			$base_url = $this->config->item('base_url');
+		?>
 		<hr>
 
 		<div class="modal hide fade" id="myModal">
@@ -17,6 +21,17 @@
 				<a href="#" class="btn btn-primary">Save changes</a>
 			</div>
 		</div>
+		
+		<div class="modal hide fade" id="fondosModal">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">×</button>
+				<h3>Selecciona un fondo para la frase...</h3>
+			</div>
+			<div class="modal-body"></div>
+			<div class="modal-footer">
+				<a href="#" class="btn btn-danger" data-dismiss="modal">Cerrar</a>
+			</div>
+		</div>
 
 		<footer>
 			<p class="pull-left">&copy; <a href="http://usman.it" target="_blank">Muhammad Usman</a> 2012</p>
@@ -24,10 +39,6 @@
 		</footer>
 		
 	</div><!--/.fluid-container-->
-	<?php
-		$this->config->load('config'); 
-		$base_url = $this->config->item('base_url');
-	?>
 	<!-- external javascript
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
