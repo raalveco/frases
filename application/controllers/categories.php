@@ -36,5 +36,104 @@ class Categories extends CI_Controller {
 		$this->load->view('admin/categories/phrases',$data);
 		$this->load->view('templates/admin_footer');
 	}
+	
+	public function add(){
+		$this->load->view('templates/admin_header');
+		
+		if($this->input->post()){
+			$this->load->model('Category');
+			
+			$category = array('name' => $this->input->post("name"));
+			
+			$id = $this->Category->insert($category);
+			
+			$data["variable"] = $this->Category->fetch($id);
+			
+			$data["message"] = "<strong>¡Registro Exitoso!</strong> La categoria ha sido registrada correctamente.";
+			
+			$this->load->view('admin/alerts/success',$data);
+		}
+		else{
+			$data["variable"] = false;
+		}
+		
+		$this->load->view('admin/categories/form',$data);
+		
+		$this->load->view('templates/admin_footer');
+	}
+	
+	public function edit($id = false){
+		$this->load->view('templates/admin_header');
+		
+		$this->load->model('Category');
+		
+		if($this->input->post()){
+			$category = $this->Category->fetch($this->input->post("id"));
+			
+			$category->name = $this->input->post("name");
+			
+			$this->Category->update($category);
+			
+			$data["variable"] = $category;
+			$data["message"] = "<strong>¡Actualización Exitosa!</strong> La categoria ha sido actualizada correctamente.";
+			
+			$this->load->view('admin/alerts/success',$data);
+		}
+		else{
+			if($id){
+				$category = $this->Category->fetch($id);
+				
+				if($category){
+					$data["variable"] = $category;	
+				}	
+				else{
+					$data["variable"] = false;
+					
+					$data["message"] = "<strong>¡Error!</strong> El registro que deseas modificar, <b>NO EXISTE</b>.";
+					$this->load->view('admin/alerts/error',$data);
+				}
+			}
+			else{
+				$data["variable"] = false;
+				
+				$data["message"] = "<strong>¡Error!</strong> El registro que deseas modificar, <b>NO EXISTE</b>.";
+				$this->load->view('admin/alerts/error',$data);
+			}
+		}
+		
+		$this->load->view('admin/categories/form',$data);
+		
+		$this->load->view('templates/admin_footer');
+	}
+
+	public function delete($id = false){
+		$this->load->view('templates/admin_header');
+		
+		$this->load->model('Category');
+		
+		if($id){
+			$category = $this->Category->fetch($id);
+			
+			if($category){
+				$this->Category->delete($category);
+				
+				$data["message"] = "<strong>¡Registro Eliminado!</strong> El registro ha sido eliminado correctamente.";
+				$this->load->view('admin/alerts/success',$data);
+			}	
+			else{
+				$data["message"] = "<strong>¡Error!</strong> El registro que deseas eliminar, <b>NO EXISTE</b>.";
+				$this->load->view('admin/alerts/error',$data);
+			}
+		}
+		else{
+			$data["message"] = "<strong>¡Error!</strong> El registro que deseas eliminar, <b>NO EXISTE</b>.";
+			$this->load->view('admin/alerts/error',$data);
+		}
+		
+		$data["categories"] = $this->Category->report("id > 0");
+		$this->load->view('admin/categories/report', $data);
+		
+		$this->load->view('templates/admin_footer');
+	}
 }
 ?>

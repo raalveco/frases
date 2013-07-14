@@ -14,7 +14,12 @@
 					  <th style="width: 50px;">Id</th>
 					  <th>Frase</th>
 					  <th>Etiqueta</th>
-					  <th style="width: 250px;">Acciones</th>
+					  <th style="width: 250px;">
+					  	<a class="btn btn-info" href="<?= $base_url ?>index.php/configurations/add">
+							<i class="icon-edit icon-white"></i>  
+							Nuevo 
+						</a>
+					  </th>
 				  </tr>
 			  </thead>   
 			  <tbody>

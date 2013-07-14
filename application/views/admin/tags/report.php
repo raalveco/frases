@@ -13,7 +13,12 @@
 				  <tr>
 					  <th style="width: 50px;">Id</th>
 					  <th>Palabra Clave</th>
-					  <th style="width: 250px;">Acciones</th>
+					  <th style="width: 250px;">
+					  	<a class="btn btn-info" href="<?= $base_url ?>index.php/tags/add">
+							<i class="icon-edit icon-white"></i>  
+							Nuevo 
+						</a>
+					  </th>
 				  </tr>
 			  </thead>   
 			  <tbody>
@@ -22,15 +27,7 @@
 			  		<td class="center"><?= $tag->id ?></td>
 			  		<td><?= $tag->keyword ?></td>
 			  		<td style="text-align: center;">
-			  			<a class="btn btn-success" href="#">
-							<i class="icon-zoom-in icon-white"></i>  
-							Ver                                            
-						</a>
-						<a class="btn btn-info" href="#">
-							<i class="icon-edit icon-white"></i>  
-							Editar                                            
-						</a>
-						<a class="btn btn-danger" href="#">
+						<a class="btn btn-danger" href="<?= $base_url ?>index.php/tags/delete/<?= $tag->id ?>">
 							<i class="icon-trash icon-white"></i> 
 							Eliminar
 						</a>

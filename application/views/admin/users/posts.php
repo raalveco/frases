@@ -15,7 +15,6 @@
 					  <th>Usuario</th>
 					  <th>Frase</th>
 					  <th>Fecha de Publicación</th>
-					  <th style="width: 250px;">Acciones</th>
 				  </tr>
 			  </thead>   
 			  <tbody>
@@ -25,20 +24,6 @@
 			  		<td><?= $post->user_id->facebook_id ?></td>
 			  		<td><?= $post->phrase_id->phrase ?></td>
 			  		<td><?= $post->post_date ?></td>
-			  		<td style="text-align: center;">
-			  			<a class="btn btn-success" href="#">
-							<i class="icon-zoom-in icon-white"></i>  
-							Ver                                            
-						</a>
-						<a class="btn btn-info" href="#">
-							<i class="icon-edit icon-white"></i>  
-							Editar                                            
-						</a>
-						<a class="btn btn-danger" href="#">
-							<i class="icon-trash icon-white"></i> 
-							Eliminar
-						</a>
-			  		</td>
 			  	</tr>
 			  	<?php } ?>
 			  </tbody>

@@ -15,7 +15,7 @@
 					  <th>Código</th>
 					  <th>Nombre</th>
 					  <th style="width: 250px;">
-					  	<a class="btn btn-info" href="<?= $base_url ?>index.php/configurations/add">
+					  	<a class="btn btn-info" href="<?= $base_url ?>index.php/fonts/add">
 							<i class="icon-edit icon-white"></i>  
 							Nuevo 
 						</a>
@@ -29,15 +29,11 @@
 			  		<td><?= $font->code ?></td>
 			  		<td><?= $font->name ?></td>
 			  		<td style="text-align: center;">
-			  			<a class="btn btn-success" href="#">
-							<i class="icon-zoom-in icon-white"></i>  
-							Ver                                            
-						</a>
-						<a class="btn btn-info" href="#">
+			  			<a class="btn btn-success" href="<?= $base_url ?>index.php/fonts/edit/<?= $font->id ?>">
 							<i class="icon-edit icon-white"></i>  
 							Editar                                            
 						</a>
-						<a class="btn btn-danger" href="#">
+						<a class="btn btn-danger" href="<?= $base_url ?>index.php/fonts/delete/<?= $font->id ?>">
 							<i class="icon-trash icon-white"></i> 
 							Eliminar
 						</a>

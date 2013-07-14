@@ -19,7 +19,7 @@
 					  <th>De</th>
 					  <th>Para</th>
 					  <th style="width: 250px;">
-					  	<a class="btn btn-info" href="<?= $base_url ?>index.php/configurations/add">
+					  	<a class="btn btn-info" href="<?= $base_url ?>index.php/categories/add">
 							<i class="icon-edit icon-white"></i>  
 							Nuevo 
 						</a>
@@ -36,15 +36,12 @@
 			  		<td><?= $phrase->from ?></td>
 			  		<td><?= $phrase->to ?></td>
 			  		<td style="text-align: center;">
-			  			<a class="btn btn-success" href="#">
-							<i class="icon-zoom-in icon-white"></i>  
-							Ver                                            
-						</a>
-						<a class="btn btn-info" href="#">
+			  		<td style="text-align: center;">
+			  			<a class="btn btn-success" href="<?= $base_url ?>index.php/categories/edit/<?= $category->id ?>">
 							<i class="icon-edit icon-white"></i>  
 							Editar                                            
 						</a>
-						<a class="btn btn-danger" href="#">
+						<a class="btn btn-danger" href="<?= $base_url ?>index.php/categories/delete/<?= $category->id ?>">
 							<i class="icon-trash icon-white"></i> 
 							Eliminar
 						</a>
