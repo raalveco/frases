@@ -122,18 +122,18 @@
 				<div class="well nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li class="nav-header hidden-tablet"></li>
-						<li><a class="ajax-link" href="<?= $base_url ?>index.php/configurations"><i class="icon-home"></i><span class="hidden-tablet"> Configuración</span></a></li>
+						<li><a class="ajax-link" href="<?= $base_url ?>index.php/configurations"><i class="icon-wrench"></i><span class="hidden-tablet"> Configuración</span></a></li>
 						<li class="nav-header hidden-tablet"></li>
-						<li><a class="ajax-link" href="<?= $base_url ?>index.php/categories"><i class="icon-home"></i><span class="hidden-tablet"> Categorías</span></a></li>
+						<li><a class="ajax-link" href="<?= $base_url ?>index.php/categories"><i class="icon-list"></i><span class="hidden-tablet"> Categorías</span></a></li>
 						<li><a class="ajax-link" href="<?= $base_url ?>index.php/backgrounds"><i class="icon-home"></i><span class="hidden-tablet"> Fondos</span></a></li>
-						<li><a class="ajax-link" href="<?= $base_url ?>index.php/fonts"><i class="icon-home"></i><span class="hidden-tablet"> Tipografías</span></a></li>
-						<li><a class="ajax-link" href="<?= $base_url ?>index.php/tags"><i class="icon-home"></i><span class="hidden-tablet"> Etiquetas</span></a></li>
+						<li><a class="ajax-link" href="<?= $base_url ?>index.php/fonts"><i class="icon-picture"></i><span class="hidden-tablet"> Tipografías</span></a></li>
+						<li><a class="ajax-link" href="<?= $base_url ?>index.php/tags"><i class="icon-tags"></i><span class="hidden-tablet"> Etiquetas</span></a></li>
 						<li class="nav-header hidden-tablet"></li>
-						<li><a class="ajax-link" href="<?= $base_url ?>index.php/phrases"><i class="icon-home"></i><span class="hidden-tablet"> Frases</span></a></li>
+						<li><a class="ajax-link" href="<?= $base_url ?>index.php/phrases"><i class="icon-pencil"></i><span class="hidden-tablet"> Frases</span></a></li>
 						<li class="nav-header hidden-tablet"></li>
-						<li><a class="ajax-link" href="<?= $base_url ?>index.php/pages"><i class="icon-home"></i><span class="hidden-tablet"> Páginas</span></a></li>
+						<li><a class="ajax-link" href="<?= $base_url ?>index.php/pages"><i class="icon-book"></i><span class="hidden-tablet"> Páginas</span></a></li>
 						<li class="nav-header hidden-tablet"></li>
-						<li><a class="ajax-link" href="<?= $base_url ?>index.php/users"><i class="icon-home"></i><span class="hidden-tablet"> Usuarios</span></a></li>
+						<li><a class="ajax-link" href="<?= $base_url ?>index.php/users"><i class="icon-user"></i><span class="hidden-tablet"> Usuarios</span></a></li>
 					</ul>
 				</div><!--/.well -->
 			</div><!--/span-->

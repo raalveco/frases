@@ -26,6 +26,16 @@
 			  		<td><?= $user->first_name ?></td>
 			  		<td><?= $user->last_name ?></td>
 			  		<td><?= $user->email ?></td>
+			  		<td style="text-align: center;">
+			  			<a class="btn btn-success" href="<?= $base_url ?>index.php/users/posts/<?= $user->id ?>">
+							<i class="icon-edit icon-white"></i>  
+							Publicaciones                                            
+						</a>
+						<a class="btn btn-warning" href="<?= $base_url ?>index.php/users/phrases/<?= $user->id ?>">
+							<i class="icon-star icon-white"></i> 
+							Favoritos
+						</a>
+			  		</td>
 			  	</tr>
 			  	<?php } ?>
 			  </tbody>

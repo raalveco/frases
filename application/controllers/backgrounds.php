@@ -51,7 +51,7 @@ class Backgrounds extends CI_Controller {
 				$config2['height']	= 60;
 				$config2['new_image'] = './backgrounds/thumbnails/'.$data["upload_data"]["file_name"];
 				$this->load->library('image_lib', $config2); 
-				$this->image_lib->resize();
+				$this->image_lib->resize(); 
 				///////////////////////////////////////////////////
 				
 				$id = $this->Background->insert($background);
