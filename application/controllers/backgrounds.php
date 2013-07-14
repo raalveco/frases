@@ -36,7 +36,7 @@ class Backgrounds extends CI_Controller {
 				print_r($error);					
 				$data["message"] = "<strong>¡Error en la carga del archivo!</strong>";
 				$this->load->view('admin/alerts/error',$data);
-				
+				$this->load->view('admin/backgrounds/form',$data);
 			}
 			else
 			{
@@ -58,12 +58,12 @@ class Backgrounds extends CI_Controller {
 				
 				$data["message"] = "<strong>¡Registro Exitoso!</strong> El fondo ha sido registrado correctamente.";
 				$this->load->view('admin/alerts/success',$data);
-	
-				//$this->load->view('upload_success', $data);
+				$data["variable"] = $this->Background->fetch($id);
+				$data["backgrounds"] = $this->Background->report("id > 0");
+				$this->load->view('admin/backgrounds/report',$data);	
 			}
-			$data["variable"] = $this->Background->fetch($id);	
-			$data["backgrounds"] = $this->Background->report("id > 0");
-			$this->load->view('admin/backgrounds/report',$data);
+			
+			
 		}
 		else{
 			$data["variable"] = false;
@@ -76,14 +76,15 @@ class Backgrounds extends CI_Controller {
 
 	public function delete($id = false){
 		$this->load->view('templates/admin_header');
-		
 		$this->load->model('Background');
 		
 		if($id){
 			$background = $this->Background->fetch($id);
 			
 			if($background){
-				unlink("backgrounds/".$background->image);
+				@unlink("backgrounds/".$background->image);
+				$strTemp = explode(".",$background->image);
+				@unlink("backgrounds/thumbnails/".$strTemp[0]."_thumb.".$strTemp[1]);
 				$this->Background->delete($background);
 				$data["message"] = "<strong>¡Registro Eliminado!</strong> El registro ha sido eliminado correctamente.";
 				$this->load->view('admin/alerts/success',$data);
