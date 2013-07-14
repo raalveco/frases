@@ -32,25 +32,36 @@ class Backgrounds extends CI_Controller {
 			if ( ! $this->upload->do_upload("image"))
 			{
 				//$error = array('error' => $this->upload->display_errors());
-				$data["variable"] = false;
-				print_r($error);					
+				$data["variable"] = false;					
 				$data["message"] = "<strong>¡Error en la carga del archivo!</strong>";
 				$this->load->view('admin/alerts/error',$data);
-				
+				$this->load->view('admin/backgrounds/form',$data);
 			}
 			else
 			{
 				$data = array('upload_data' => $this->upload->data());
 				$background = array('image' => $data["upload_data"]["file_name"]);
+				
+				///////////////Image thumb//////////////////////////
+				$config2['image_library'] = 'gd2';
+				$config2['source_image']	= './backgrounds/'.$data["upload_data"]["file_name"];
+				$config2['maintain_ratio'] = TRUE;
+				$config2['create_thumb'] = TRUE;
+				$config2['width']	 = 80;
+				$config2['height']	= 60;
+				$config2['new_image'] = './backgrounds/thumbnails/'.$data["upload_data"]["file_name"];
+				$this->load->library('image_lib', $config2); 
+				$this->image_lib->resize();
+				///////////////////////////////////////////////////
+				
 				$id = $this->Background->insert($background);
+				$data["variable"] = $this->Background->fetch($id);	
 				$data["message"] = "<strong>¡Registro Exitoso!</strong> El fondo ha sido registrado correctamente.";
 				$this->load->view('admin/alerts/success',$data);
 	
-				//$this->load->view('upload_success', $data);
+				$data["backgrounds"] = $this->Background->report("id > 0");
+				$this->load->view('admin/backgrounds/report',$data);
 			}
-			$data["variable"] = $this->Background->fetch($id);	
-			$data["backgrounds"] = $this->Background->report("id > 0");
-			$this->load->view('admin/backgrounds/report',$data);
 		}
 		else{
 			$data["variable"] = false;
@@ -70,7 +81,9 @@ class Backgrounds extends CI_Controller {
 			$background = $this->Background->fetch($id);
 			
 			if($background){
-				unlink("backgrounds/".$background->image);
+				@unlink("backgrounds/".$background->image);
+				$tempStr = explode(".",$background->image);
+				@unlink("backgrounds/thumbnails/".$tempStr[0]."_thumb".".".$tempStr[1]);
 				$this->Background->delete($background);
 				$data["message"] = "<strong>¡Registro Eliminado!</strong> El registro ha sido eliminado correctamente.";
 				$this->load->view('admin/alerts/success',$data);
