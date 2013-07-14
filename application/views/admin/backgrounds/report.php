@@ -22,10 +22,10 @@
 							<i class="icon-zoom-in icon-white"></i>  
 							Ver                                            
 						</a>
-						<a class="btn btn-info" href="#">
+						<!--<a class="btn btn-info" href="#">
 							<i class="icon-edit icon-white"></i>  
 							Editar                                            
-						</a>
+						</a>-->
 						<a class="btn btn-danger" href="#">
 							<i class="icon-trash icon-white"></i> 
 							Eliminar

@@ -20,15 +20,15 @@
 			  		<td style="text-align: center;">
 			  			<a class="btn btn-success" href="#">
 							<i class="icon-zoom-in icon-white"></i>  
-							View                                            
+							Ver                                            
 						</a>
 						<a class="btn btn-info" href="#">
 							<i class="icon-edit icon-white"></i>  
-							Edit                                            
+							Editar                                            
 						</a>
 						<a class="btn btn-danger" href="#">
 							<i class="icon-trash icon-white"></i> 
-							Delete
+							Eliminar
 						</a>
 			  		</td>
 			  	</tr>
