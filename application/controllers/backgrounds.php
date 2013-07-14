@@ -43,6 +43,19 @@ class Backgrounds extends CI_Controller {
 				$data = array('upload_data' => $this->upload->data());
 				$background = array('image' => $data["upload_data"]["file_name"]);
 				$id = $this->Background->insert($background);
+				
+				///////////////Image thumb/////////////////////////////
+				$config2['image_library'] = 'gd2';
+				$config2['source_image']	= './backgrounds/'.$data["upload_data"]["file_name"];
+				$config2['maintain_ratio'] = TRUE;
+				$config2['create_thumb'] = TRUE;
+				$config2['width']	 = 80;
+				$config2['height']	= 60;
+				$config2['new_image'] = './backgrounds/thumbnails/'.$data["upload_data"]["file_name"];
+				$this->load->library('image_lib', $config2); 
+				$this->image_lib->resize(); 
+				///////////////////////////////////////////////////
+				
 				$data["message"] = "<strong>¡Registro Exitoso!</strong> El fondo ha sido registrado correctamente.";
 				$this->load->view('admin/alerts/success',$data);
 	
