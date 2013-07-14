@@ -3,8 +3,6 @@ $(document).ready(function(){
 	$('.fondos').click(function(e){
 		e.preventDefault();
 		
-		alert($(this).attr("href"));
-		
 		$('#fondosModal .modal-body').load($(this).attr("href"));
 		
 		$('#fondosModal').modal('show');

@@ -231,14 +231,49 @@ class Phrases extends CI_Controller {
 		$this->load->view('templates/admin_footer');
 	}
 
-	public function backgrounds(){
+	public function backgrounds($id){
 		$this->load->model('Background');
 		
 		$backgrounds = $this->Background->report("id > 0","id DESC",30);
 		
+		$this->config->load('config'); 
+		$base_url = $this->config->item('base_url');
+		
 		if($backgrounds) foreach($backgrounds as $background){
-			echo '<img src="'.$background->image.'" />';
+			echo '<a href="'.$base_url.'index.php/phrases/seleccionarBackground/'.$id.'/'.$background->id.'"><img src="'.$base_url.'backgrounds/'.$background->image.'" /></a>';
 		}
 	} 
+	
+	public function seleccionarBackground($id, $background_id){
+		$this->load->view('templates/admin_header');
+		
+		$this->load->model('Phrase');
+		$this->load->model('Background');
+		$this->load->model('Font');
+		
+		$phrase = $this->Phrase->fetch($id);
+			
+		$phrase->background_id = $background_id;
+		
+		$this->Phrase->update($phrase);
+		
+		$phrases = $this->Phrase->report("id > 0");
+		$data["phrases"] = array();
+		
+		if($phrases) foreach($phrases as $phrase){
+			$data["phrases"][$phrase->id] = $phrase;
+			
+			//Consultar relaciones 1:N con otras tablas
+			$data["phrases"][$phrase->id]->background_id = $this->Background->fetch($phrase->background_id);
+			$data["phrases"][$phrase->id]->font_id = $this->Font->fetch($phrase->font_id);
+		}
+		
+		$data["message"] = "<strong>¡Actualización Exitosa!</strong> El Fondo de la frase ha sido actualizado.";
+		$this->load->view('admin/alerts/success',$data);
+		
+		$this->load->view('admin/phrases/report', $data);
+		
+		$this->load->view('templates/admin_footer');
+	}
 }
 ?>
