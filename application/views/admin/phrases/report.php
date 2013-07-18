@@ -26,8 +26,17 @@
 			  <tbody>
 			  	<?php if($phrases) foreach($phrases as $phrase){ ?>
 			  	<tr>
-			  		<td class="center"><?= $phrase->id ?></td>
-			  		<td><?= $phrase->background_id->image ?></td>
+			  		<td class="center">
+			  			<a class="btn btn-info renderizar" href="<?= $base_url ?>index.php/phrases/view/<?= $phrase->id ?>">
+							<i class="icon-picture icon-white"></i>     
+						</a>
+			  		</td>
+			  		<td>
+			  			<?php if(is_object($phrase->background_id)){ ?>
+				  			<?php $imagen = explode(".",$phrase->background_id->image); ?>
+				  			<img src="<?= $base_url ?>backgrounds/thumbnails/<?= $imagen[0] ?>_thumb.<?= $imagen[1] ?>" />
+			  			<?php } ?>
+			  		</td>
 			  		<td><?= $phrase->font_id->name ?></td>
 			  		<td><?= $phrase->phrase ?></td>
 			  		<td style="text-align: center;">

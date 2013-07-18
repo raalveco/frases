@@ -11,11 +11,18 @@
 		http://usman.it
 		http://twitter.com/halalit_usman
 	-->
-	<meta charset="utf-8">
-	<title><?= "CONFIGURACION_ TITULO" ?></title>
+	<?php $title = $this->Configuration->find_first("code = 'PAGE_TITLE'")->value;?>
+	<?php $description = $this->Configuration->find_first("code = 'DESCRIPTION'")->value;?>
+	<?php $author = $this->Configuration->find_first("code = 'AUTHOR'")->value;?>
+	<?php $keywords = $this->Configuration->find_first("code = 'KEYWORDS'")->value;?>
+	<?php $metas = $this->Configuration->find_first("code = 'METAS'")->value;?>
+	<title><?= $title ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
-	<meta name="author" content="Muhammad Usman">
+	<meta name="description" content="<?= $description ?>">
+	<meta name="author" content="<?= $author ?>">
+	<meta name="keywords" content="<?= $keywords ?>">
+	
+	<?= $metas ?>
 
 	<!-- The styles -->
 	<?php

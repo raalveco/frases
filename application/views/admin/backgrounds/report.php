@@ -25,7 +25,10 @@
 			  	<?php if($backgrounds) foreach($backgrounds as $background){ ?>
 			  	<tr>
 			  		<td class="center"><?= $background->id ?></td>
-			  		<td><?= $background->image ?></td>
+			  		<td class="center">
+			  			<?php $imagen = explode(".",$background->image); ?>
+			  			<img src="<?= $base_url ?>backgrounds/thumbnails/<?= $imagen[0] ?>_thumb.<?= $imagen[1] ?>" />
+			  		</td>
 			  		<td style="text-align: center;">
 						<a class="btn btn-danger" href="<?= $base_url ?>index.php/backgrounds/delete/<?= $background->id ?>">
 							<i class="icon-trash icon-white"></i> 

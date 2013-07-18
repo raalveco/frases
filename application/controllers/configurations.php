@@ -20,7 +20,7 @@ class Configurations extends CI_Controller {
 		if($this->input->post()){
 			$this->load->model('Configuration');
 			
-			$configuration = array('code' => $this->input->post("code"), 'value' => $this->input->post("value"));
+			$configuration = array('code' => $this->input->post("code"), 'value' => str_replace('"', "'", $this->input->post("value")));
 			
 			$id = $this->Configuration->insert($configuration);
 			
@@ -48,7 +48,7 @@ class Configurations extends CI_Controller {
 			$configuracion = $this->Configuration->fetch($this->input->post("id"));
 			
 			$configuracion->code = $this->input->post("code");
-			$configuracion->value = $this->input->post("value");
+			$configuracion->value = str_replace('"', "'", $this->input->post("value"));
 			
 			$this->Configuration->update($configuracion);
 			

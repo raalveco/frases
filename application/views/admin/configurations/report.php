@@ -33,10 +33,6 @@
 							<i class="icon-edit icon-white"></i>  
 							Editar                                            
 						</a>
-						<a class="btn btn-danger" href="<?= $base_url ?>index.php/configurations/delete/<?= $configuration->id ?>">
-							<i class="icon-trash icon-white"></i> 
-							Eliminar
-						</a>
 			  		</td>
 			  	</tr>
 			  	<?php } ?>

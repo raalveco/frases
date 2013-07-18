@@ -1,11 +1,49 @@
 $(document).ready(function(){
 	
+	$('.phrases button').click(function(e){
+		$("#selectError2_chzn .chzn-choices .search-choice span").each(function(){
+			var x = $(this).html();
+			
+			$("#selectError2 option").each(function(){
+				var y = $(this).html();
+				
+				if(x == y){
+					$(this).attr("selected","selected");
+				}
+			});
+		});
+		
+		$("#selectError1_chzn .chzn-choices .search-choice span").each(function(){
+			var x = $(this).html();
+			
+			$("#selectError1 option").each(function(){
+				var y = $(this).html();
+				
+				if(x == y){
+					$(this).attr("selected","selected");
+				}
+			});
+		});
+		
+		$('.phrases').submit();
+	});	
+	
 	$('.fondos').click(function(e){
 		e.preventDefault();
 		
 		$('#fondosModal .modal-body').load($(this).attr("href"));
 		
 		$('#fondosModal').modal('show');
+	});
+	
+	$('.renderizar').click(function(e){
+		e.preventDefault();
+		
+		$('#renderModal .modal-body').html('<br/><br/><br/><br/><br/><center><img src="../img/spin.gif"></center><br/><br/><br/><br/><br/>');
+		
+		$('#renderModal .modal-body').load($(this).attr("href"));
+		
+		$('#renderModal').modal('show');
 	});
 	
 	//themes, change CSS with JS

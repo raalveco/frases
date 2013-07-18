@@ -32,6 +32,17 @@
 				<a href="#" class="btn btn-danger" data-dismiss="modal">Cerrar</a>
 			</div>
 		</div>
+		
+		<div class="modal hide fade" id="renderModal">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">×</button>
+				<h3>Preview de la Frase</h3>
+			</div>
+			<div class="modal-body"></div>
+			<div class="modal-footer">
+				<a href="#" class="btn btn-danger" data-dismiss="modal">Cerrar</a>
+			</div>
+		</div>
 
 		<footer>
 			<p class="pull-left">&copy; <a href="http://usman.it" target="_blank">Muhammad Usman</a> 2012</p>
